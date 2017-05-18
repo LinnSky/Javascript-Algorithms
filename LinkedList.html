@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Linked List</title>
+	<script>
+		function LinkedList() {
+			this.head = null;
+		}
+
+
+		LinkedList.prototype.prepend = function(val) {
+			var newNode = {
+				data: val,
+				next: this.head
+			};
+			this.head = newNode;
+		};
+
+		var list = new LinkedList();
+		list.prepend(10);
+		list.prepend(12);
+		list.prepend(8);
+		list.prepend(23);
+		list.prepend(5);
+		console.log(list);
+	</script>
+</head>
+<body>	
+</body>
+</html>
