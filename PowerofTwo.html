@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Power of Two</title>
+	<script>
+	var isPowerOfTwo = function(n) {
+		if (n < 1) {
+			return false;
+		} else if(n == 1 || n == 0) {
+			return true;
+		} else {
+			var sqrt = Math.sqrt(n);
+			if (sqrt === parseInt(sqrt)) {
+				return isPowerOfTwo(sqrt); 
+			} else {
+				n = n / 2;
+				sqrt = Math.sqrt(n);
+				if (sqrt === parseInt(sqrt)) {
+					return isPowerOfTwo(sqrt);
+				} else {
+					return false;
+				}
+			}
+		}
+	};
+
+	n = 2048;
+	console.log(isPowerOfTwo(n));
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
