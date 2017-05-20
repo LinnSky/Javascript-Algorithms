@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Remove Duplicates from Sorted Array</title>
+	<script>
+	var removeDuplicates = function(nums) {
+		var i = 0;
+	    var j = 0;
+	    while(j < nums.length) {
+	        if(nums[i] == nums[j]) {
+	            j++;
+	        } else {
+	            i++;
+	            nums[i] = nums[j];
+	            j++;
+	        }
+	    }
+	    return i + 1;
+	};
+
+	var nums = [4,6,7,7,7,9];
+	console.log(removeDuplicates(nums));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
