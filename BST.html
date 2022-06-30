@@ -23,7 +23,24 @@
             return root
         }
 
-        console.log(createTree());
+        const root = createTree();
+
+        const findLeaves = function(root) {
+            let ans = [];
+            let populateLeaves = root => {
+                if(root === null) return 0;
+                let leftDepth = populateLeaves(root.left);
+                let rightDepth = populateLeaves(root.right);
+                let d = Math.max(leftDepth, rightDepth);
+                ans[d] = ans[d] || [];
+                ans[d].push(root.data);
+                return d + 1;
+            }
+            populateLeaves(root);
+            return ans;
+        }
+
+        console.log(findLeaves(root))
     </script>
 </body>
 </html>
